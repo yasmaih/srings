@@ -1,43 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasmine.aichi <yasmine.aichi@learner.42.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 20:32:55 by yasmine.aichi     #+#    #+#             */
-/*   Updated: 2025/07/31 16:46:07 by yasmine.aichi    ###   ########.fr       */
+/*   Created: 2025/07/31 13:48:17 by yasmine.aichi     #+#    #+#             */
+/*   Updated: 2025/07/31 13:52:11 by yasmine.aichi    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 //#include <stdio.h>
 
-int	ft_str_is_printable(char *str)
+int	ft_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (str[i] == '\0')
+	while (str[i] != '\0')
 	{
-		return (1);
-	}
-	while (str[i])
-	{
-		if (!(str[i] >= 33 && str[i] <= 126))
-		{
-			return (0);
-		}
 		i++;
 	}
-	return (1);
+	return (i);
 }
 /*
 int	main(void)
 {
-	char	*str;
+	char	str[65] = "hello";
 
-	str = "   ";
-	printf("%d", ft_str_is_printable(str));
+	printf("%d", ft_strlen(str));
 	return (0);
 }
 */

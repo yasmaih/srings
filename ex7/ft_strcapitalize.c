@@ -6,17 +6,17 @@
 /*   By: yasmine.aichi <yasmine.aichi@learner.42.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/30 22:17:02 by yasmine.aichi     #+#    #+#             */
-/*   Updated: 2025/07/30 22:29:47 by yasmine.aichi    ###   ########.fr       */
+/*   Updated: 2025/07/31 13:49:57 by yasmine.aichi    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include <stdio.h>
 
-int	ft_checklast(int i, int *str)
+int	ft_checklast(int i, char *str)
 {
 	if (str[i - 1] >= 'A' && str[i - 1] <= 'Z')
 	{
-		return (0);
+		return (1);
 	}
 	if (str[i - 1] >= 'a' && str[i - 1] <= 'z')
 	{
@@ -27,16 +27,34 @@ int	ft_checklast(int i, int *str)
 		return (1);
 	}
 	else
-		return (1);
+		return (0);
 }
 
-char *ft_strcapitalize(char *str)
+char	*ft_strcapitalize(char *str)
 {
-	int i;
-	i = 0;
+	int	i;
 
-	while(str[i])
+	i = 0;
+	while (str[i])
 	{
-		if(ft_capitalize(i, str[i - 1]) == 1 )
+		if (ft_checklast(i, str) == 0 && (str[i] >= 'a' && str[i] <= 'z'))
+		{
+			str[i] = str[i] - 32;
+		}
+		else if (ft_checklast(i, str) == 1 && (str[i] >= 'A' && str[i] <= 'Z'))
+		{
+			str[i] = str[i] + 32;
+		}
+		i++;
 	}
+	return (str);
 }
+/*
+int	main(void)
+{
+	char	str[] = "hello,how are you doing? 42words forty-two; fifty+and+one";
+
+	printf("%s", ft_strcapitalize(str));
+	return (0);
+}
+*/

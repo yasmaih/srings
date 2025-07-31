@@ -1,43 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yasmine.aichi <yasmine.aichi@learner.42.t  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 20:32:55 by yasmine.aichi     #+#    #+#             */
-/*   Updated: 2025/07/31 16:46:07 by yasmine.aichi    ###   ########.fr       */
+/*   Created: 2025/07/31 13:52:15 by yasmine.aichi     #+#    #+#             */
+/*   Updated: 2025/07/31 15:26:30 by yasmine.aichi    ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//#include <stdio.h>
+#include <unistd.h>
 
-int	ft_str_is_printable(char *str)
+void	ft_putstr(char *str)
 {
 	int	i;
 
 	i = 0;
-	if (str[i] == '\0')
+	while (str[i] != '\0')
 	{
-		return (1);
-	}
-	while (str[i])
-	{
-		if (!(str[i] >= 33 && str[i] <= 126))
-		{
-			return (0);
-		}
+		write(1, &str[i], 1);
 		i++;
 	}
-	return (1);
 }
 /*
 int	main(void)
 {
 	char	*str;
 
-	str = "   ";
-	printf("%d", ft_str_is_printable(str));
+	str = "hello \n";
+	ft_putstr(str);
 	return (0);
 }
 */
