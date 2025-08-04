@@ -1,0 +1,305 @@
+﻿x
+1 Instructions 1
+2 Préambule 5
+3 Exercice 0 : ft_str_is_alpha 6
+4 Exercice 1 : ft_str_is_numeric 7
+5 Exercice 2 : ft_str_is_lowercase 8
+6 Exercice 3 : ft_str_is_uppercase 9
+7 Exercice 4 : ft_str_is_printable 10
+8 Exercice 5 : ft_strupcase 11
+9 Exercice 6 : ft_strlowcase 12
+10 Exercice 7 : ft_strcapitalize 13
+11 Exercice 8 : ft_strlen 14
+12 Exercice 9 : ft_putstr 15
+13 Exercice 10 : ft_putstr_non_printable 16
+14 Rendu et évaluation entre pairs 17
+42Born2code
+Chapter 1
+Instructions
+• Seule cette page servira de référence : ne faites pas confiance aux rumeurs.
+• Attention ! Ce document pourrait potentiellement changer jusqu’à la soumission.
+• Assurez-vous d’avoir les permissions appropriées sur vos fichiers et répertoires.
+• Vous devez suivre les procédures de soumission pour tous vos exercices.
+• Vos exercices seront vérifiés et notés par vos camarades de classe.
+• De plus, vos exercices seront vérifiés et notés par un programme appelé Moulinette.
+• Moulinette est très méticuleuse et stricte dans son évaluation de votre travail. Elle est
+entièrement automatisée, et il n’y a aucun moyen de négocier avec elle. Donc, pour éviter
+les mauvaises surprises, soyez aussi minutieux que possible.
+• Moulinette n’est pas très ouverte d’esprit. Elle n’essayera pas de comprendre votre code
+s’il ne respecte pas la Norme. Moulinette s’appuie sur un programme appelé norminette
+pour vérifier si vos fichiers respectent la norme. En bref : il serait stupide de soumettre
+un travail qui ne passe pas la vérification de norminette.
+• Ces exercices sont soigneusement disposés par ordre de difficulté - du plus facile au plus
+difficile. Nous ne considérerons pas un exercice plus difficile réussi si un exercice plus
+facile n’est pas parfaitement fonctionnel.
+• Utiliser une fonction interdite est considéré comme de la tricherie. Les tricheurs obtiennent
+-42, et cette note est non négociable.
+• Vous n’aurez à soumettre une fonction main() que si nous demandons un programme.
+• Moulinette compile avec ces flags : -Wall -Wextra -Werror, et utilise cc.
+• Si votre programme ne compile pas, vous obtiendrez 0.
+• Vous ne pouvez pas laisser aucun fichier supplémentaire dans votre répertoire autre que
+ceux spécifiés dans le sujet.
+• Vous avez une question ? Demandez à votre pair à droite. Sinon, essayez votre pair à
+gauche.
+• Votre guide de référence s’appelle Google / man / Internet / ....
+© 2025 Association 42. - Tous droits réservés 1
+42Born2code
+• Consultez le Slack Piscine.
+• Examinez attentivement les exemples. Ils pourraient très bien appeler à des détails qui ne
+sont pas explicitement mentionnés dans le sujet...
+• Par Odin, par Thor ! Utilisez votre cerveau !!!
+N’oubliez pas d’ajouter l’en-tête standard 42 dans chacun de vos fichiers
+.c/.h. Norminette vérifie son existence de toute façon !
+Norminette doit être lancée avec le flag -R CheckForbiddenSourceHeader.
+Moulinette l’utilisera aussi.
+© 2025 Association 42. - Tous droits réservés 2
+42Born2code
+● Contexte
+La Piscine C est intense. C’est votre premier grand défi à 42 — une plongée profonde dans la
+résolution de problèmes, l’autonomie et la communauté.
+Durant cette phase, votre objectif principal est de construire vos fondations — à travers la lutte,
+la répétition, et surtout l’échange d’apprentissage par les pairs.
+À l’ère de l’IA, les raccourcis sont faciles à trouver. Cependant, il est important de considérer si
+votre utilisation de l’IA vous aide vraiment à grandir — ou si elle se contente de vous empêcher
+de développer de vraies compétences.
+La Piscine est aussi une expérience humaine — et pour l’instant, rien ne peut remplacer cela.
+Pas même l’IA.
+Pour un aperçu plus complet de notre position sur l’IA — en tant qu’outil d’apprentissage, dans
+le cadre du programme ICT, et en tant qu’attente croissante sur le marché du travail — veuillez
+vous référer à la FAQ dédiée disponible sur l’intranet.
+● Message principal
+☛ Construire des fondations solides sans raccourcis.
+☛ Développer réellement des compétences techniques et personnelles.
+☛ Expérimenter un véritable apprentissage par les pairs, commencer à apprendre à apprendre
+et à résoudre de nouveaux problèmes.
+☛ Le parcours d’apprentissage est plus important que le résultat.
+☛ Apprendre les risques associés à l’IA, et développer des pratiques de contrôle efficaces et
+des contre-mesures pour éviter les pièges courants.
+● Règles pour les apprenants :
+• Vous devez appliquer le raisonnement à vos tâches assignées, surtout avant de vous tourner
+vers l’IA.
+• Vous ne devez pas demander de réponses directes à l’IA.
+• Vous devez apprendre l’approche globale de 42 sur l’IA.
+© 2025 Association 42. - Tous droits réservés 3
+42Born2code
+● Résultats de la phase :
+Dans cette phase de fondation, vous obtiendrez les résultats suivants :
+• Acquérir des bases techniques et de codage appropriées.
+• Savoir pourquoi et comment l’IA peut être dangereuse pendant cette phase.
+● Commentaires et exemple :
+• Oui, nous savons que l’IA existe — et oui, elle peut résoudre vos projets. Mais vous êtes
+ici pour apprendre, pas pour prouver que l’IA a appris. Ne gaspillez pas votre temps (ou
+le nôtre) juste pour démontrer que l’IA peut résoudre le problème donné.
+• Apprendre à 42 ne consiste pas à connaître la réponse — il s’agit de développer la capacité
+à en trouver une. L’IA vous donne la réponse directement, mais cela vous empêche de
+construire votre propre raisonnement. Et le raisonnement prend du temps, des efforts, et
+implique des échecs. Le chemin vers le succès n’est pas censé être facile.
+• Gardez à l’esprit que lors des examens, l’IA n’est pas disponible — pas d’internet, pas de
+smartphones, etc. Vous réaliserez rapidement si vous avez trop compté sur l’IA dans votre
+processus d’apprentissage.
+• L’apprentissage par les pairs vous expose à différentes idées et approches, améliorant vos
+compétences interpersonnelles et votre capacité à penser de manière divergente. C’est
+bien plus précieux que de simplement discuter avec un bot. Alors ne soyez pas timide —
+parlez, posez des questions, et apprenez ensemble !
+• Oui, l’IA fera partie du programme — à la fois comme outil d’apprentissage et comme
+sujet en soi. Vous aurez même l’occasion de construire votre propre logiciel d’IA. Afin d’en
+apprendre davantage sur notre approche crescendo, vous passerez par la documentation
+disponible sur l’intranet.
+✓ Bonne pratique :
+Je suis bloqué sur un nouveau concept. Je demande à quelqu’un à proximité comment il l’a
+abordé. Nous parlons pendant 10 minutes — et soudain, ça fait clic. Je comprends.
+✗ Mauvaise pratique :
+J’utilise secrètement l’IA, je copie du code qui semble correct. Pendant l’évaluation par les
+pairs, je ne peux rien expliquer. J’échoue. Pendant l’examen — sans IA — je suis à nouveau
+bloqué. J’échoue.
+© 2025 Association 42. - Tous droits réservés 4
+42Born2code
+Chapter 2
+Préambule
+Une anecdote amusante sur le nombre 42
+Le nombre 42 occupe une place particulière à la fois en mathématiques et dans la culture
+populaire. Voici un fait mathématique fascinant à son sujet :
+En base 10, 42 est un entier pair, mais il possède aussi des propriétés intéressantes dans
+d’autres bases. Par exemple, en base 13, le nombre 42 s’écrit 3313, ce qui est un repunit (un
+nombre composé d’unités répétées).
+De plus, 42 est un nombre pronic, c’est-à-dire qu’il est le produit de deux entiers consécutifs
+: 6 × 7 = 42. Les nombres pronics sont également connus sous le nom de nombres oblongs ou
+rectangulaires.
+Dans le domaine de la géométrie, un polygone à 42 côtés s’appelle un tétracontakaïdécagone.
+Bien qu’il soit rarement abordé, il est intéressant d’en explorer les propriétés.
+Par ailleurs, 42 est un nombre sphénique, c’est-à-dire qu’il est le produit de trois nombres
+premiers distincts : 2 × 3 × 7 = 42. Les nombres sphéniques ont des propriétés de factorisation
+uniques qui les rendent dignes d’étude en théorie des nombres.
+Au-delà des mathématiques, le nombre 42 est célèbre pour être « la réponse à la question
+ultime sur la vie, l’univers et tout le reste » dans la série de science-fiction de Douglas Adams,
+« Le Guide du voyageur galactique ». Cette référence a consacré le 42 comme un nombre culte
+dans la culture populaire, apparaissant souvent comme clin d’œil ou hommage.
+En résumé, que vous exploriez ses propriétés mathématiques ou appréciiez sa portée cul-
+turelle, le nombre 42 regorge de curiosités et d’anecdotes passionnantes.
+© 2025 Association 42. - Tous droits réservés 5
+42Born2code
+Chapter 3
+Exercice 0 : ft_str_is_alpha
+Exercice0
+ft_str_is_alpha
+Dossier: ex0/
+Fichiers à Soumettre: ft_str_is_alpha.c
+Autorisé: None
+• Créez une fonction qui retourne 1 si la chaîne passée en paramètre ne contient que des
+caractères alphabétiques, et 0 si elle contient tout autre caractère.
+Prototype :
+int ft_str_is_alpha(char *str);
+• Elle doit retourner 1 si str est vide.
+© 2025 Association 42. - Tous droits réservés 6
+42Born2code
+Chapter 4
+Exercice 1 : ft_str_is_numeric
+Exercice1
+ft_str_is_numeric
+Dossier: ex1/
+Fichiers à Soumettre: ft_str_is_numeric.c
+Autorisé: None
+• Créez une fonction qui retourne 1 si la chaîne passée en paramètre ne contient que des
+chiffres, et 0 si elle contient tout autre caractère.
+Prototype :
+int ft_str_is_numeric(char *str);
+• Elle doit retourner 1 si str est vide.
+© 2025 Association 42. - Tous droits réservés 7
+42Born2code
+Chapter 5
+Exercice 2 : ft_str_is_lowercase
+Exercice2
+ft_str_is_lowercase
+Dossier: ex2/
+Fichiers à Soumettre: ft_str_is_lowercase.c
+Autorisé: None
+• Créez une fonction qui retourne 1 si la chaîne passée en paramètre ne contient que des
+caractères alphabétiques minuscules, et 0 si elle contient tout autre caractère.
+Prototype :
+int ft_str_is_lowercase(char *str);
+• Elle doit retourner 1 si str est vide.
+© 2025 Association 42. - Tous droits réservés 8
+42Born2code
+Chapter 6
+Exercice 3 : ft_str_is_uppercase
+Exercice3
+ft_str_is_uppercase
+Dossier: ex3/
+Fichiers à Soumettre: ft_str_is_uppercase.c
+Autorisé: None
+• Créez une fonction qui retourne 1 si la chaîne passée en paramètre ne contient que des
+caractères alphabétiques majuscules, et 0 si elle contient tout autre caractère.
+Prototype :
+int ft_str_is_uppercase(char *str);
+• Elle doit retourner 1 si str est vide.
+© 2025 Association 42. - Tous droits réservés 9
+42Born2code
+Chapter 7
+Exercice 4 : ft_str_is_printable
+Exercice4
+ft_str_is_printable
+Dossier: ex4/
+Fichiers à Soumettre: ft_str_is_printable.c
+Autorisé: None
+• Créez une fonction qui retourne 1 si la chaîne passée en paramètre ne contient que des
+caractères imprimables, et 0 si elle contient tout autre caractère.
+Prototype :
+int ft_str_is_printable(char *str);
+• Elle doit retourner 1 si str est vide.
+© 2025 Association 42. - Tous droits réservés 10
+42Born2code
+Chapter 8
+Exercice 5 : ft_strupcase
+Exercice5
+ft_strupcase
+Dossier: ex5/
+Fichiers à Soumettre: ft_strupcase.c
+Autorisé: None
+• Créez une fonction qui transforme toutes les lettres d’une chaîne en majuscules.
+Prototype:
+char *ft_strupcase(char *str);
+• Elle doit retourner str.
+© 2025 Association 42. - Tous droits réservés 11
+42Born2code
+Chapter 9
+Exercice 6 : ft_strlowcase
+Exercice6
+ft_strlowcase
+Dossier: ex6/
+Fichiers à Soumettre: ft_strlowcase.c
+Autorisé: None
+• Créez une fonction qui transforme toutes les lettres d’une chaîne en minuscules.
+Prototype:
+char *ft_strlowcase(char *str);
+• Elle doit retourner str.
+© 2025 Association 42. - Tous droits réservés 12
+42Born2code
+Chapter 10
+Exercice 7 : ft_strcapitalize
+Exercice7
+ft_strcapitalize
+Dossier: ex7/
+Fichiers à Soumettre: ft_strcapitalize.c
+Autorisé: None
+• Créez une fonction qui met la première lettre de chaque mot en majuscule et toutes les
+autres lettres en minuscule.
+• Un mot est une suite de caractères alphanumériques.
+Prototype:
+char *ft_strcapitalize(char *str);
+• Elle doit retourner str.
+• Par exemple :
+Exemple :
+hello, how are you doing? 42words forty-two; fifty+and+one
+Hello, How Are You Doing? 42words Forty-Two; Fifty+And+One
+© 2025 Association 42. - Tous droits réservés 13
+42Born2code
+Chapter 11
+Exercice 8 : ft_strlen
+Exercice8
+ft_strlen
+Dossier: ex8/
+Fichiers à Soumettre: ft_strlen.c
+Autorisé: None
+• Créez une fonction qui compte et retourne le nombre de caractères dans une chaîne.
+Prototype:
+int ft_strlen(char *str);
+© 2025 Association 42. - Tous droits réservés 14
+42Born2code
+Chapter 12
+Exercice 9 : ft_putstr
+Exercice9
+ft_putstr
+Dossier: ex9/
+Fichiers à Soumettre: ft_putstr.c
+Autorisé: write
+• Créez une fonction qui affiche une chaîne de caractères sur la sortie standard.
+Prototype:
+void ft_putstr(char *str);
+© 2025 Association 42. - Tous droits réservés 15
+42Born2code
+Chapter 13
+Exercice 10 : ft_putstr_non_printable
+Exercice10
+ft_putstr_non_printable
+Dossier: ex10/
+Fichiers à Soumettre: ft_putstr_non_printable.c
+Autorisé: write
+• Créez une fonction qui affiche une chaîne de caractères à l’écran. Si cette chaîne contient
+des caractères non imprimables, ils devront être affichés sous forme hexadécimale (en
+minuscules), précédés d’un antislash ‘\‘.
+• Par exemple :
+Hello\nHow are you ?
+• La fonction devra afficher :
+Hello\0aHow are you ?
+Prototype:
+void ft_putstr_non_printable(char *str);
+© 2025 Association 42. - Tous droits réservés 16
+42Born2code
+Chapter 14
+Rendu et évaluation entre pairs
+Déposez votre travail dans votre dépôt Git comme d’habitude. Seul le contenu de ce dépôt
+sera évalué pendant la soutenance. N’hésitez pas à revérifier les noms de vos fichiers pour vous
+assurer qu’ils sont corrects.
+Vous devez rendre uniquement les fichiers demandés dans le sujet de ce
+projet.
+© 2025 Association 42. - Tous droits réservés 17

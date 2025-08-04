@@ -12,55 +12,53 @@
 
 #include <unistd.h>
 
-void	convert_to_hexa(char c)
-{
-	int	div;
-	int	mod;
-	int	first;
-	int	rest;
+void	ft_putchar(char c)
 
-	if (c <= 10)
-	{
-		div = c / 16;
-		first = div + '0';
-		mod = c % 16;
-		rest = mod + '0'
-	}
-	else
-	{
-		write(1, &res, 1);
-	}
+{
 	write(1, &c, 1);
+}
+
+void	ft_putnbr_hexa(int nb)
+
+{
+	if (nb < 16)
+	{
+		ft_putchar('0');
+	}
+	if (nb >= 16)
+		ft_putnbr_hexa(nb / 16);
+	if ((nb % 16) <= 9)
+		ft_putchar((nb % 16) + '0');
+	else
+		ft_putchar((nb % 16) - 10 + 'a');
 }
 
 void	ft_putstr_non_printable(char *str)
 {
-	int		i;
-	int		div;
-	int		res;
-	char	first_unit;
-	char	second_unit;
+	int	i;
 
 	i = 0;
 	while (str[i] != '\0')
 	{
-		if (str[i] >= 33 && str[i] <= 126)
+		if (str[i] >= 32 && str[i] <= 126)
 		{
 			write(1, &str[i], 1);
 		}
 		else
 		{
 			write(1, "\\", 1);
+			ft_putnbr_hexa(str[i]);
 		}
 		i++;
 	}
 }
-
+/*
 int	main(void)
 {
 	char	*str;
 
-	str = "hello hallo \n";
+	str = "Hello\nHow are\tyou ?";
 	ft_putstr_non_printable(str);
 	return (0);
 }
+*/

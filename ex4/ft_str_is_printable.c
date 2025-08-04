@@ -1,43 +1,21 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   ft_str_is_printable.c                              :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: yasmine.aichi <yasmine.aichi@learner.42.t  +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/30 20:32:55 by yasmine.aichi     #+#    #+#             */
-/*   Updated: 2025/07/31 16:46:07 by yasmine.aichi    ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-//#include <stdio.h>
-
-int	ft_str_is_printable(char *str)
-{
-	int	i;
-
-	i = 0;
-	if (str[i] == '\0')
-	{
-		return (1);
-	}
-	while (str[i])
-	{
-		if (!(str[i] >= 33 && str[i] <= 126))
-		{
-			return (0);
-		}
-		i++;
-	}
-	return (1);
-}
-/*
-int	main(void)
-{
-	char	*str;
-
-	str = "   ";
-	printf("%d", ft_str_is_printable(str));
-	return (0);
-}
-*/
+Traceback (most recent call last):
+  File "/home/yasmine.aichi/.local/bin/c_formatter_42", line 8, in <module>
+    sys.exit(main())
+             ~~~~^^
+  File "/home/yasmine.aichi/.local/lib/python3.13/site-packages/c_formatter_42/__main__.py", line 43, in main
+    print(run_all(content), end="")
+          ~~~~~~~^^^^^^^^^
+  File "/home/yasmine.aichi/.local/lib/python3.13/site-packages/c_formatter_42/run.py", line 29, in run_all
+    content = clang_format(content)
+  File "/home/yasmine.aichi/.local/lib/python3.13/site-packages/c_formatter_42/formatters/clang_format.py", line 70, in clang_format
+    with _config_context():
+         ~~~~~~~~~~~~~~~^^
+  File "/usr/lib64/python3.13/contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "/home/yasmine.aichi/.local/lib/python3.13/site-packages/c_formatter_42/formatters/clang_format.py", line 34, in _config_context
+    CONFIG_FILENAME.symlink_to(config_path)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/usr/lib64/python3.13/pathlib/_local.py", line 789, in symlink_to
+    os.symlink(target, self, target_is_directory)
+    ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/home/yasmine.aichi/.local/lib/python3.13/site-packages/c_formatter_42/data/.clang-format' -> '.clang-format'
